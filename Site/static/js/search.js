@@ -24,7 +24,7 @@ window.searchClear = searchClear;
 window.searchItemActive = searchItemActive;
 
 document.addEventListener('DOMContentLoaded', (e) => {
-    fetch('/mathwiki/allFiles.json').then(response => response.json())
+    fetch('/math-wiki/allFiles.json').then(response => response.json())
     .then((data) => {
         var allFiles = data;
         var curPath = getBasePath(window.location.pathname);
