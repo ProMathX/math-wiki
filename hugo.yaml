@@ -1,4 +1,4 @@
-baseURL: 'https://promathx.github.io/math-wiki'
+baseURL: 'https://promathx.github.io/math-wiki/'
 languageCode: 'en-us'
 title: 'MathWiki'
 markup:
@@ -24,3 +24,11 @@ module:
     target: static
   - source: Site/layouts
     target: layouts
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+params:
+  BookSearchConfig: { "type": "flexsearch" }
