@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Measure_theory on MathWiki</title>
+    <link>https://zhaoshenzhai.github.io/mathwiki/tags/measure_theory/</link>
+    <description>Recent content in Measure_theory on MathWiki</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhaoshenzhai.github.io/mathwiki/tags/measure_theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Measure</title>
+      <link>https://zhaoshenzhai.github.io/mathwiki/measure/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://zhaoshenzhai.github.io/mathwiki/measure/</guid>
+      <description>&lt;h1 id=&#34;definition-and-examples&#34;&gt;Definition and Examples&lt;/h1&gt;&#xA;&lt;p&gt;\begin{definition}[\cite{Tse23}, \cite{Fol99}]&lt;/p&gt;&#xA;&lt;p&gt;A &lt;em&gt;measure&lt;/em&gt; on a \ref[measurable space]{measurable_space} $(X,\mc{B})$ is a map $\mu:\mc{B}\to[0,\infty]$ such that $\mu(\e)=0$ and $\mu(\bigsqcup_nA_n)=\sum_n\mu(A_n)$ for any pairwise-disjoint countable family $(A_n)_{n&amp;lt;\omega}$ of sets in $\mc{B}$.&lt;/p&gt;&#xA;&lt;p&gt;\end{definition}&lt;/p&gt;&#xA;&lt;p&gt;\begin{definition_}&lt;/p&gt;&#xA;&lt;p&gt;We call the triple $(X,\mc{B},\mu)$ a &lt;em&gt;measure space&lt;/em&gt;, and elements in \ref[$\Meas_\mu$]{measurable_set} are said to be &lt;em&gt;$\mu$-measurable&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;\end{definition_}&lt;/p&gt;&#xA;&lt;p&gt;\begin{definition_}&lt;/p&gt;&#xA;&lt;p&gt;A function $f:X\to Y$ between measure spaces $(X,\mc{B},\mu)$ and $(Y,\mc{C},\nu)$ is &lt;em&gt;measure-preserving&lt;/em&gt; if it is a \ref[$(\mc{B},\mc{C})$-measurable map]{measurable_space#measurable-functions} such that, on a $\mu$-conull set $X_0\subeq X$, we have $\mu(\l.f\r|_{X_0}^{-1}(C))=\nu(C)$ for each $C\in\mc{C}$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

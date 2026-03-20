@@ -1,0 +1,73 @@
+[
+    {"Mac97":
+        {
+            "title": "Categories for the Working Mathematician",
+            "author": ["Saunders Mac Lane"],
+            "date": "1997",
+            "edition": "2",
+            "series": "Graduate Texts in Mathematics",
+            "publisher": "Springer New York",
+            "link": "https://doi.org/10.1007/978-1-4757-4721-8",
+            "type": "book",
+            "label": "Mac97"
+        }
+    },
+    {"Alu09":
+        {
+            "title": "Algebra: Chapter 0",
+            "author": ["Paulo Allufi"],
+            "date": "2009",
+            "series": "Graduate Studies in Mathematics",
+            "volume": "104",
+            "publisher": "American Mathematical Society",
+            "link": "https://bookstore.ams.org/gsm-104/",
+            "type": "book",
+            "label": "Alu09"
+        }
+    },
+    {"Tse22":
+        {
+            "title": "Topics in Ergodic Theory and Measured Group Theory",
+            "author": ["Anush Tserunyan"],
+            "date": "2022",
+            "link": "https://www.math.mcgill.ca/atserunyan/Courses/2022_W.Math594.Erg&MsGrp/",
+            "type": "online",
+            "label": "Tse22"
+        }
+    },
+    {"Tse23":
+        {
+            "title": "Advanced Real Analysis 1",
+            "author": ["Anush Tserunyan"],
+            "date": "2023",
+            "link": "https://www.math.mcgill.ca/atserunyan/Courses/2023F.Math564.Analysis%201/",
+            "type": "online",
+            "label": "Tse23"
+        }
+    },
+    {"Fol99":
+        {
+            "title": "Real Analysis, Modern Techniques and Their Applications",
+            "author": ["Gerald B. Folland"],
+            "date": "1999",
+            "edition": "2",
+            "series": "Pure and Applied Mathematics",
+            "publisher": "A Wiley Series of Texts, Monographs and Tracts, John Wiley & Sons",
+            "link": "https://www.wiley.com/en-us/Real+Analysis%3A+Modern+Techniques+and+Their+Applications%2C+2nd+Edition-p-9780471317166",
+            "type": "book",
+            "label": "Fol99"
+        }
+    },
+    {"Fur97":
+        {
+            "title": "Ergodic behavior of diagonal measures and a theorem of Szemerédi on arithmetic progressions",
+            "author": ["Harry Furstenberg"],
+            "date": "1977",
+            "journal": "Journal d’Analyse Mathématique",
+            "volume": "31",
+            "pages": "204-256",
+            "type": "article",
+            "label": "Fur97"
+        }
+    }
+]

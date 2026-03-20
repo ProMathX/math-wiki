@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Filters and Ultrafilters</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Filters and Ultrafilters
+                
+            </h1>
+
+            <h1 id="definition-and-examples">Definition and Examples</h1>
+<p>\begin{definition}</p>
+<p>Let $(P,\leq)$ be a \ref[poset]{poset}. A <em>filter</em> on $P$ is a non-empty subset $F\subeq P$ such that</p>
+<ol>
+<li>(Compatibility). If $x,y\in F$, then there exists some $z\leq x,y$ such that $z\in F$.</li>
+<li>(Upward-closure). If $x\in F$ and $x\leq y$, then $y\in F$.</li>
+</ol>
+<p>A proper filter $F\subeq P$ is an <em>ultrafilter</em> if $F$ is maximal amongst all proper filters on $P$.</p>
+<p>\end{definition}</p>
+<p>\begin{example}[Fréchet filter]</p>
+<p>If $X$ is an infinite set, the <em>Fréchet filter</em> $F\coloneqq\l\{A\subeq X\st|X\comp A|&lt;\aleph_0\r\}$ is the filter $F\subeq2^X$ consisting of cofinite sets.</p>
+<p>\end{example}</p>
+<p>\begin{example}[Principal filters]</p>
+<p>Let $X$ be a set and fix $x\in X$. The filter $p_x\coloneqq\l\{A\subeq X\st A\ni x\r\}$ is called the <em>principal filter at $x$</em>, which is clearly an ultrafilter.</p>
+<p>\end{example}</p>
+<h2 id="ultrafilters-on-boolean-algebras">(Ultra)filters on Boolean algebras</h2>
+<p>Let $(B,\cup,\cap,0,1)$ be a Boolean algebra, which is a poset with $a\leq b$ iff $a\cap b=a$. Thus, we can define filters and ultrafilters on $B$.</p>
+<p>\begin{fact}[\ref{}]</p>
+<p>A subset $F\subeq B$ is a filter iff $\chi_F:B\to2$ is a morphism of bounded meet semilattices.</p>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref{}]</p>
+<p>The following are equivalent for a proper filter $U\sub B$ on a Boolean algebra $B$.</p>
+<ol>
+<li>(Maximality). $U$ is an ultrafilter.</li>
+<li>(Morphism). The map $\chi_U:B\to2$ is a morphism of Boolean algebras.</li>
+<li>(Dichotomy). For each $a\in B$, either $a\in U$ or $a^c\in U$.</li>
+<li>(Prime). For each $a_1,a_2\in B$, we have $a_1+a_2\in B$ iff either $a_1\in U$ or $a_2\in U$.</li>
+</ol>
+<p>\end{fact}</p>
+<h1 id="convergence-of-filters">Convergence of Filters</h1>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

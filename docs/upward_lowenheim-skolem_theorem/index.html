@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Upward Löwenheim-Skolem Theorem</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Upward Löwenheim-Skolem Theorem
+                
+            </h1>
+
+            <p>Let $L$ be a \ref[first-order language]{first-order_language}.</p>
+<p>\begin{theorem}[Löwenheim-Skolem]</p>
+<p>For any infinite \ref[$L$-structure]{model} $M$ and any cardinal $\kappa\geq|M|+|L|+\aleph_0$, there is an elementary extension $N\esupeq M$ of cardinality $\kappa$.</p>
+<p>\end{theorem}</p>
+<p>  The proof is a classic application of the Compactness theorem, along with some other model-theoretic fluff:</p>
+<p>\begin{fact}[\ref[Compactness Theorem]{compactness_theorem}]\label{compactness}</p>
+<p>An \ref[$L$-theory]{theory} $T$ is satisfiable iff every finite subtheory of $T$ is satisfiable.</p>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref{diagrams_and_embeddings}]\label{char_elem_emb}</p>
+<p>Let $M$ be an $L$-structure. If $N$ is an $L_M$-structure such that $N\models\Diag_\mathrm{el}(M)$, then there is an $L$-elementary embedding $M\into_eN$.</p>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref[Downward Löwenheim-Skolem]{downward_lowenheim-skolem_theorem}]\label{down}</p>
+<p>For any infinite $L$-structure $N$ and any cardinal $\kappa\leq|N|$ such that $\kappa\geq|L|+\aleph_0$, there is an elementary substructure $N_0\esubeq N$ of cardinality $\kappa$.</p>
+<p>\end{fact}</p>
+<div class="space"></div>
+<p>\begin{proof}</p>
+<p>Consider the language $L&rsquo;\coloneqq L(M)\sqcup\l\{c_\alpha\st\alpha&lt;\kappa\r\}$, where each $c_\alpha$ is a new constant symbol. The $L&rsquo;$-theory $T\coloneqq\Diag_\mathrm{el}(M)\cup\l\{c_\alpha\neq c_\beta\st\alpha,\beta\in\kappa\land\alpha\neq\beta\r\}$ is satisfiable by Fact \iref{compactness}:</p>
+<blockquote>
+<p>If $T_0\subeq T$ is finite, then there exist $\alpha_1,\dots,\alpha_n&lt;\kappa$ such that $T_0\subeq\Diag_\mathrm{el}(M)\cup\{c_{\alpha_i}\neq c_{\alpha_j}\st i\neq j\leq n\}$, and taking $a_1,\dots,a_n\in M$ distinct, which is possible since $M$ is infinite, makes $(M,\bar{a})\models T_0$.</p></blockquote>
+<p>Thus there is a model $N\models T$, so by Fact \iref{char_elem_emb}, an isomorphic copy thereof is an elementary extension of $M$. Finally, observe that $\kappa\into N$, so by Fact \iref{down}, we can assume without loss of generality that $|N|=\kappa$.<span style="float:right;">$\blacksquare$</span></p>
+<p>\end{proof}</p>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

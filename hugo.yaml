@@ -1,0 +1,26 @@
+baseURL: 'https://promathx.github.io/math-wiki'
+languageCode: 'en-us'
+title: 'MathWiki'
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+    renderer:
+      unsafe: true
+module:
+  mounts:
+  - source: Notes
+    target: content
+  - source: Site/archetypes
+    target: archetypes
+  - source: Site/static
+    target: static
+  - source: Site/layouts
+    target: layouts

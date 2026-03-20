@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Downward Löwenheim-Skolem Theorem</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Downward Löwenheim-Skolem Theorem
+                
+            </h1>
+
+            <h1 id="statement-and-proof">Statement and Proof</h1>
+<p>Let $L$ be a \ref[first-order language]{first-order_language}.</p>
+<p>\begin{theorem}[Löwenheim-Skolem]\label{downward_lowenheim-skolem}</p>
+<p>For any infinite \ref[$L$-structure]{model} $M$, any subset $A\subseteq M$, and any cardinal $\kappa$ such that $|A|+|L|+\aleph_0\leq\kappa\leq|M|$, there is an elementary substructure $N\esubeq M$ containing $A$ of cardinality $\kappa$.</p>
+<p>\end{theorem}</p>
+<p>  In order to generate a substructure $N\subseq M$ from $A$, we need to close $A$ under function applications. Here, we need to do a bit more and also close $A$ under witnesses of quantifiers:</p>
+<p>\begin{fact}[\ref[Tarski-Vaught Test]{tarski-vaught_test}]\label{tarski-vaught}</p>
+<p>Let $N\subseq M$ be $L$-structures. Then $N\esubeq M$ iff for every formula $\phi(\bar{x},y)$ and for every $\bar{a}\in N$, we have $M\models\ex y\phi(\bar{a},y)$ iff $M\models\phi(\bar{a},a)$ for some $a\in N$.</p>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref[Cardinal arithmetic]{cardinal_arithmetic}]\label{cardinal}</p>
+<p>For every infinite cardinal $\kappa$, we have $\kappa^2=\kappa$.</p>
+<p>\end{fact}</p>
+<div class="space"></div>
+<p>\begin{proof}[of Theorem \iref{downward_lowenheim-skolem}]</p>
+<p>Since $|A|\leq\kappa\leq|M|$, we can expand $A$ so that, without loss of generality, we have $|A|=\kappa$. We inductively construct subsets $N_\alpha\subseq M$ such that $|N_\alpha|\leq\kappa$ for each $\alpha&lt;\kappa$, starting with $N_0\coloneqq A$. Given $N_\alpha$, we construct $N_{\alpha+1}$ by adding in witnesses to $M\models\ex y\phi(\bar{a},y)$ for every $\bar{a}\in N_\alpha$ and formula $\phi(\bar{x},y)$. Since $\kappa\geq|L|+\aleph_0$ and $\kappa\geq|N_\alpha|$, we have $|N_{\alpha+1}|\leq|N_\alpha|\cdot\aleph_0\leq\kappa$ by Fact \iref{cardinal}. Set $N\coloneqq\bigcup_{\alpha&lt;\kappa}N_\alpha$, which we claim is as desired.</p>
+<br>
+<p>  Indeed, observe that for each $f\in\mc{F}$, $\alpha&lt;\kappa$, and $\bar{a}\in N_\alpha$, the witness of $\ex y(f(\bar{a})=y)$ lies in $N$, so $N\subseq M$. The hypothesis of Fact \iref{tarski-vaught} now holds by construction of $M$, so $N\esubeq M$. Moreover, $|N|=\kappa$ by Fact \iref{cardinal}.<span style="float:right;">$\blacksquare$</span></p>
+<p>\end{proof}</p>
+<p>\begin{remark}</p>
+<p>The process of choosing witnesses to $M\models\ex y\phi(\bar{a},y)$ for each $\bar{a}\in N_\alpha$ can be rephrased as \ref[Skolemizing]{skolem_theory#skolemization} $T\coloneqq\Th(M)$ to a \ref[Skolem theory]{skolem_theory} $T^\ast\supseteq\Th(M)$ over some expansion $L^\ast\supseteq L$ and expanding $M$ to a model $M^\ast\models T^\ast$, so these witnesses can be chosen as $f_\phi(\bar{a})$, where $f_\phi$ is the Skolem function of $\phi$ in $L^\ast$.</p>
+<br>
+<p>  The elementary substructure $N\esubeq M$ containing $A$ is then referred to as the <em>\ref[Skolem hull]{skolem_theory#skolem-hull}</em> of $A$, denoted $\mc{H}(A)$. Note that $\mc{H}(A)$ depends highly on the particular Skolemization of $T$, of which there are many.</p>
+<p>\end{remark}</p>
+<h2 id="set-theoretic-extension">Set-theoretic extension</h2>
+<p>When $L=L_\mathrm{set}$ is the language of set theory, we can require $N$ to be \ref[transitive]{transitive}.</p>
+<p>\begin{corollary}</p>
+<p>For any infinite $L_\mathrm{set}$-structure $M$ satisfying $\mathsf{Extensionality}$ and any transitive set $A\subeq M$, there is a transitive set $N$ containing $A$ such that $N\equiv M$ and $|N|=|A|+\aleph_0$.</p>
+<p>\end{corollary}</p>
+<p>\begin{proof}</p>
+<p>By Theorem \iref{downward_lowenheim-skolem}, there is an elementary substructure $N_0\esubeq M$ containing $A$ of cardinality $|A|+\aleph_0$. Then $N_0$ models $\mathsf{Extensionality}$ too, so letting $N\coloneqq\pi(N_0)$ be the Mostowski Collapse of $N_0$, which is transitive, we have $(N,\in)\iso(N_0,\in)$ by \TODO. Since $A$ is transitive, $\pi(A)=A$ and hence $A\subeq N$ too, and $N\equiv M$ follows since $N\iso N_0\esubeq M$.<span style="float:right;">$\blacksquare$</span></p>
+<p>\end{proof}</p>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Measure</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Measure
+                
+            </h1>
+
+            <h1 id="definition-and-examples">Definition and Examples</h1>
+<p>\begin{definition}[\cite{Tse23}, \cite{Fol99}]</p>
+<p>A <em>measure</em> on a \ref[measurable space]{measurable_space} $(X,\mc{B})$ is a map $\mu:\mc{B}\to[0,\infty]$ such that $\mu(\e)=0$ and $\mu(\bigsqcup_nA_n)=\sum_n\mu(A_n)$ for any pairwise-disjoint countable family $(A_n)_{n&lt;\omega}$ of sets in $\mc{B}$.</p>
+<p>\end{definition}</p>
+<p>\begin{definition_}</p>
+<p>We call the triple $(X,\mc{B},\mu)$ a <em>measure space</em>, and elements in \ref[$\Meas_\mu$]{measurable_set} are said to be <em>$\mu$-measurable</em>.</p>
+<p>\end{definition_}</p>
+<p>\begin{definition_}</p>
+<p>A function $f:X\to Y$ between measure spaces $(X,\mc{B},\mu)$ and $(Y,\mc{C},\nu)$ is <em>measure-preserving</em> if it is a \ref[$(\mc{B},\mc{C})$-measurable map]{measurable_space#measurable-functions} such that, on a $\mu$-conull set $X_0\subeq X$, we have $\mu(\l.f\r|_{X_0}^{-1}(C))=\nu(C)$ for each $C\in\mc{C}$.</p>
+<p>\end{definition_}</p>
+<p>\begin{example}[Counting measure]</p>
+<p>For any set $X$, its power set $\pow(X)$ is a $\sigma$-algebra, on which we can define the <em>counting measure</em> as $\mu(A)\coloneqq|A|$ if $A$ is finite and $\mu(A)\coloneqq\infty$ otherwise.</p>
+<p>\end{example}</p>
+<p>\begin{example}[Dirac measures]</p>
+<p>For any $x\in X$, the <em>Dirac measure concentrated at $x$</em> is the (atomic) measure $\delta_x:\pow(X)\to\l\{0,1\r\}$ defined by $\delta_x(A)\coloneqq1$ iff $x\in A$, and $\delta_x(A)\coloneqq0$ otherwise.</p>
+<p>\end{example}</p>
+<p>\begin{example}[Lebesgue measure]</p>
+<p>There is a unique measure $\lambda:\mc{B}(\R)\to[0,\infty]$, called the <em>\ref[Lebesgue measure]{measures_on_reals#lebesgue_measure}</em>, such that $\lambda([a,b])=b-a$ for each $a,b\in\R$ with $a\leq b$; this measure is clearly invariant under $\Isom\R$.</p>
+<p>\end{example}</p>
+<p>\begin{example}[Bernoulli$(p)$ measures]</p>
+<p>Let $p\in[0,1]$ and equip $2^\omega$ with the \ref[product topology]{product_topology}. There is a unique (Borel) measure $\mu_p:\mc{B}(2^\omega)\to[0,1]$, called the <em>\ref[Bernoulli$(p)$ measure]{bernoulli_p_measure}</em>, such that $\mu_p([w])=p^{n_1}(1-p)^{n_0}$ where $n_i$ is the number of occurrences of $i\in\l\{0,1\r\}$ in $w$ and $[w]$ is the set of all sequences in $2^\omega$ containing $w$ as a prefix.</p>
+<p>\end{example}</p>
+<h1 id="classes-of-measures">Classes of Measures</h1>
+<h2 id="finiteness-conditions">Finiteness conditions</h2>
+<p>A measure $\mu$ is said to be a <em>\ref[probability]{probability_space} measure</em> if $\mu(X)=1$, <em>finite</em> if $\mu(X)&lt;\infty$, and <em>$\sigma$-finite</em> if there is a partition $X=\bigsqcup_{n&lt;\omega}X_n$ with each $\mu(X_n)&lt;\infty$.</p>
+<p>\begin{fact}[\ref[Carathéodory&rsquo;s Extension Theorem]{caratheodory_extension_theorem}]</p>
+<p>Every premeasure $\mu_0:\mc{A}\to X$ on an algebra $\mc{A}$ extends to a measure $\mu:\l\langle\mc{A}\r\rangle_\sigma\to X$. If $\mu_0$ is $\sigma$-finite, then this extension is unique, and is also $\sigma$-finite.</p>
+<p>\end{fact}</p>
+<h2 id="refatomlessatom_measure_theory-measures">\ref[Atomless]{atom_measure_theory} measures</h2>
+<p>A measurable set $A\in\mc{B}$ is said to be an <em>atom</em> if for each measurable $B\subeq A$, either $\mu(B)=0$ or $\mu(B)=\mu(A)$. A measure $\mu$ is said to be <em>atomic</em> if there is an atom, and <em>atomless</em> otherwise.</p>
+<p>\begin{fact}[\ref{atom_measure_theory}]</p>
+<p>Let $\mu$ be $\sigma$-finite. If $\mc{B}$ is countably \ref[generated]{measurable_space#generation} and separates points, then</p>
+<ol>
+<li>Every atom in $\mc{B}$ is a singleton, and there are countably many such atoms, say $\l\{\l\{x_n\r\}\r\}_{n&lt;\omega}$.</li>
+<li>There is a decomposition $\mu=\mu_0+\sum_{n&lt;\omega}a_n\delta_{x_n}$ for some atomless measure $\mu_0$ and some $a_n\in\R_{\geq0}$.</li>
+</ol>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref[Sierpinski&rsquo;s Theorem]{sierpinski}]</p>
+<p>If $\mu$ is atomless, then $\mu$ attains every value in $[0,\mu(X)]$.</p>
+<p>\end{fact}</p>
+<h2 id="borel-measures">Borel measures</h2>
+<p>If $X$ is equipped with a topology $\mc{T}$, we usually define measures $\mu$ on the \ref[Borel $\sigma$-algebra]{measurable_space#borel-sigma-algebra} $\mc{B}(X)$ with respect to $\mc{T}$, in which case we say that $\mu$ is a <em>Borel measure</em>.</p>
+<p>\begin{fact}[\ref[Regularity and Tightness]{regularity_and_tightness_of_Borel_measures}]</p>
+<p>\TODO</p>
+<p>\end{fact}</p>
+<p>  A <em>standard measure space</em> is a $\sigma$-finite measure space $(X,\mc{B},\mu)$ such that $(X,\mc{B})$ is \ref[standard Borel space]{measurable_space#borel-sigma-algebra}.</p>
+<p>\begin{fact}[\ref[Measure Isomorphism Theorem]{measure_isomorphism_theorem}]</p>
+<p>Any two atomless standard probability spaces are isomorphic (via a measure-preserving isomorphism). In particular, they are all isomorphic to $([0,1],\lambda)$.</p>
+<p>\end{fact}</p>
+<h1 id="properties-of-measures">Properties of Measures</h1>
+<p>Throughout, let $(X,\mc{B},\mu)$ be a measure space.</p>
+<p>\begin{fact}[\ref[Continuity]{continuity_of_measures}]</p>
+<p>Let $(A_n)_{n&lt;\omega}$ be a sequence in $\mc{B}$.</p>
+<ol>
+<li>If $(A_n)_{n&lt;\omega}$ is increasing, then $\mu(\bigcup_nA_n)=\lim_{n\to\infty}\mu(A_n)$.</li>
+<li>If $(A_n)_{n&lt;\omega}$ is decreasing and $\mu(A_0)&lt;\infty$, then $\mu(\bigcap_nA_n)=\lim_{n\to\infty}\mu(A_n)$.</li>
+</ol>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref[Borel-Cantelli]{borel_cantelli_lemmas}]</p>
+<p>Let $(A_n)_{n&lt;\omega}$ be a sequence of $\mu$-measurable sets.</p>
+<ol>
+<li>If $\sum_n\mu(A_n)&lt;\infty$, then $\mu$-almost every $x\in X$ lives in at-most finitely-many $A_n$&rsquo;s.</li>
+<li>If $\mu(X)&lt;\infty$ and there exists $\epsilon&gt;0$ such that $\mu(A_n)\geq\epsilon$ for all $n&lt;\omega$, then at least an $\epsilon$-measure set of $x\in X$ lives in infinitely-many $A_n$&rsquo;s.</li>
+</ol>
+<p>\end{fact}</p>
+<h1 id="constructions-on-measures">Constructions on Measures</h1>
+<h2 id="the-lebesgue-integral">The Lebesgue integral</h2>
+<p>\TODO</p>
+<h2 id="products-of-measures">Products of measures</h2>
+<p>\TODO</p>
+<h2 id="dynamical-systems">Dynamical systems</h2>
+<p>An action $G\act(X,\mc{B},\mu)$ is <em>measure-preserving</em> if for each $g\in G$, the orbit map $x\mapsto gx$ is measure-preserving. Such actions define <em>\ref[measure-preserving dynamical systems]{measure-preserving_dynamical_system}</em>, studied in <em>ergodic theory</em>.</p>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

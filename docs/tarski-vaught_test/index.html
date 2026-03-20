@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Tarski-Vaught Test</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Tarski-Vaught Test
+                
+            </h1>
+
+            <h1 id="statement-and-proof">Statement and Proof</h1>
+<p>Let $L$ be a \ref[first-order language]{first-order_language}.</p>
+<p>\begin{theorem}[Tarski-Vaught Test]</p>
+<p>Let $N\subseq M$ be \ref[$L$-structures]{model}. Then $N\esubeq M$ iff for every formula $\phi(\bar{x},y)$ and for every $\bar{a}\in N$, we have $M\models\ex y\phi(\bar{a},y)$ iff $M\models\phi(\bar{a},a)$ for some $a\in N$.</p>
+<p>\end{theorem}</p>
+<p>\begin{proof}</p>
+<p>If $N\esubeq M$, then $M\models\ex y\phi(\bar{a},y)$ iff $N\models\ex y\phi(\bar{a},y)$ by elementarity, which holds iff there is some $a\in N$ such that $N\models\phi(\bar{a},a)$. By elementarity again, we have $M\models\phi(\bar{a},a)$ for some $a\in N$, as desired.</p>
+<br>
+<p>  Conversely, let $\phi(\bar{x})$ be a formula and $\bar{a}\in N$. We show that $N\models\phi(\bar{a})$ iff $M\models\phi(\bar{a})$ by induction on $\phi$ with trivial atomic and connective cases. If $\phi(\bar{x})=\ex y\psi(\bar{x},y)$, then $M\models\ex y\psi(\bar{a},y)$ iff $M\models\psi(\bar{a},a)$ for some $a\in N$, so $N\models\psi(\bar{a},a)$ for some $a\in N$ by induction. Hence $N\models\ex y\psi(\bar{a},y)$ by definition, as desired.<span style="float:right;">$\blacksquare$</span></p>
+<p>\end{proof}</p>
+<h2 id="classes">Classes</h2>
+<p>The above model-theoretic result is formulated within $\mathsf{ZFC}$; in particular, structures are sets. In set theory, one needs a version of the Tarski-Vaught test where $M\subeq N$ are classes.</p>
+<p>\begin{theorem}[Tarski-Vaught Test for classes]</p>
+<p>Let $\phi_1,\dots,\phi_n$ be a finite set of $L_\mathrm{set}$-formulas which are subformula-closed, and let $N\subseteq M$ be classes. Then $\mathsf{ZFC}$ proves that the following are equivalent.</p>
+<ol>
+<li>$\bigwedge_{i\leq n}N\esubeq_{\phi_i}M$.</li>
+<li>The conjunction of $\fa\bar{a}\in N(\phi_i^M(\bar{a})\leftrightarrow\ex a\in N\,\phi^M_j(\bar{a},a))$, over all formulas $\phi_i(\bar{x})$ of the form $\ex y\phi_j(\bar{x},y)$.</li>
+</ol>
+<p>\end{theorem}</p>
+<p>\begin{proof}</p>
+<p>If (1) holds and $\phi_i(\bar{x})=\ex y\phi_j(\bar{x},y)$, then $M\models\phi_i(\bar{a})$ iff $N\models\phi_i(\bar{a})$, which holds iff there is some $a\in N$ such that $N\models\phi_j(\bar{a},a)$. Since $N\esubeq_{\phi_j}M$, we have $M\models\phi_j(\bar{a},a)$ for some $a\in N$, as desired.</p>
+<br>
+<p>  Conversely, let $i\leq n$ and take $\bar{a}\in N$. We show that $N\esubeq_{\phi_i}M$ by induction on $\phi_i$ with trivial atomic and connective cases. If $\phi_i(\bar{x})=\ex y\phi_j(\bar{x},y)$, then $M\models\phi_i(\bar{a})$ iff $M\models\phi_j(\bar{a},a)$ for some $a\in N$, so $N\models\phi_j(\bar{a},a)$ for some $a\in N$ by induction. Hence $N\models\ex y\phi_j(\bar{a},y)$ by definition, as desired.<span style="float:right;">$\blacksquare$</span></p>
+<p>\end{proof}</p>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

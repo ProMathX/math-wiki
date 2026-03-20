@@ -1,0 +1,50 @@
+#toc {
+    position: fixed;
+    z-index: 1;
+    top: 180px;
+    overflow-x: hidden;
+    pointer-events: none;
+
+    opacity: 0;
+    transition: left var(--tocTransition), opacity var(--tocTransition);
+
+    border: 2px solid var(--fg);
+    border-radius: 10px;
+    background-color: white;
+}
+
+#tocButton{
+    position: fixed;
+}
+
+.TOCListH1 {
+    font-size: 18px;
+    padding-left: 0px;
+    font-family: 'mlmt';
+}
+
+.TOCListH2 {
+    opacity: 0.6;
+}
+
+.TOCListH1 li, .TOCListH2 li {
+    display: block;
+}
+
+.TOCButton {
+    font-family: 'mlmt';
+    font-size: 19px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 2px 5px;
+    margin: 0px;
+    text-align: left;
+    color: var(--fg);
+    background-color: var(--bg);
+}
+
+.TOCButton:hover {
+    cursor: pointer;
+    background-color: var(--box-bg);
+}

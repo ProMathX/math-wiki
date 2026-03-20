@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang=en-US class="noScroll">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Szemerédi&#39;s Theorem</title>
+
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/fonts.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/links.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/lists.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/search.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/mathJax.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/darkMode.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/variables.css">
+        <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/noProperty.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/input.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/search.js" type="module"></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/mathJax.js" type="module" async></script>
+        <script src="https://zhaoshenzhai.github.io/mathwiki/js/darkMode.js" type="module"></script>
+
+        <div style="display:none;" id="preamble"></div>
+    </head>
+
+    <body>
+        
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/headers.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/format.js" type="module"></script>
+    <script src="https://zhaoshenzhai.github.io/mathwiki/js/single/refs.js" type="module"></script>
+
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/single.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/ref.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/toc.css">
+    <link rel="stylesheet" href="https://zhaoshenzhai.github.io/mathwiki/css/env.css">
+
+    <div id="mainPage">
+        <div id="content">
+            <h1 id="title" titleSize="">
+                
+                    Szemerédi&#39;s Theorem
+                
+            </h1>
+
+            <p>The <em>upper (Banach) density</em> of a subset $A\subeq\N$ is $\bar{d}(A)\coloneqq\limsup_n\frac{1}{n}|A\cap\l\{0,\dots,n-1\r\}|$.</p>
+<p>\begin{theorem}[Szemerédi; 1975]\label{szemeredi}</p>
+<p>Any subset $A\subeq\N$ with strictly positive upper density contains arbitrarily long arithmetic progressions, i.e., for any $k\geq1$, there exists $n\in\N$ and $r\geq1$ such that $\l\{n+ir\st i&lt;k\r\}\subeq A$.</p>
+<br>
+<p>  In fact, for any $k\geq1$, there exists $n\in\N$ such that $\bar{d}(\bigcap_{i&lt;k}(A-in))&gt;0$.</p>
+<p>\end{theorem}</p>
+<p>In 1977, Furstenberg \cite{Fur97} gave an ergodic theoretic proof of Szemerédi&rsquo;s Theorem using the following facts.</p>
+<p>\begin{fact}[\ref[Furstenberg&rsquo;s Multiple Recurrence]{furstenbergs_multiple_recurrence}]</p>
+<p>Let $(X,\mu,T)$ be a \ref[measure-preserving dynamical system]{measure-preserving_dynamical_system}. For any positive-measure $A\subeq X$ and any $k\geq1$, there exists $n\geq1$ such that $\mu(\bigcap_{i&lt;k}T^{-in}A)&gt;0$.</p>
+<p>\end{fact}</p>
+<p>\begin{fact}[\ref[Furstenberg&rsquo;s Correspondence Principle]{furstenbergs_correspondence_principle}]</p>
+<p>For any $A\subeq\N$, there is a measure-preserving dynamical system $(X,\mu,T)$ and a measurable set $B\subeq X$ such that for any $k\geq1$ and $n_1,\dots,n_{k-1}\in\N$, we have
+\begin{equation*}
+\bar{d}(A\cap(A-n_1)\cap(A-n_2)\cap\cdots\cap(A-n_{k-1}))\geq\mu(B\cap T^{-n_1}B\cap T^{-n_2}B\cap\cdots\cap T^{-n_{k-1}}B).
+\end{equation*}</p>
+<p>\end{fact}</p>
+<p>With these two facts, Theorem \iref{szemeredi} follows by taking $n_i\coloneqq in$.</p>
+
+
+            <div id="references"></div>
+            <div class="bottomSpace"></div>
+        </div>
+
+        <div id="toc"></div>
+    </div>
+
+
+        <div id="searchBox" style="display: none;">
+            <input id="searchBar" placeholder="Search for a note..." onkeydown="search(event);">
+            <ul id="searchList" onclick="searchOpen(getCtrlKeyDown());">
+                <li id="searchItem0" onmouseover="searchItemActive(0)"></li>
+                <li id="searchItem1" onmouseover="searchItemActive(1)"></li>
+                <li id="searchItem2" onmouseover="searchItemActive(2)"></li>
+                <li id="searchItem3" onmouseover="searchItemActive(3)"></li>
+                <li id="searchItem4" onmouseover="searchItemActive(4)"></li>
+                <li id="searchItem5" onmouseover="searchItemActive(5)"></li>
+                <li id="searchItem6" onmouseover="searchItemActive(6)"></li>
+                <li id="searchItem7" onmouseover="searchItemActive(7)"></li>
+                <li id="searchItem8" onmouseover="searchItemActive(8)"></li>
+                <li id="searchItem9" onmouseover="searchItemActive(9)"></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+Images/*/*.aux
+Images/*/*.fdb_latexmk
+Images/*/*.fls
+Images/*/*.log
+Images/*/*.out
+Images/*/*.pdf
+Images/*/*.synctex.gz
+Images/*/*.svg
+
+Site/.local
+.hugo_build.lock
+
+.scripts/js/node_modules
+.scripts/js/package-lock.json
