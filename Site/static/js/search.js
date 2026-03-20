@@ -110,7 +110,7 @@ export function searchScroll(amount) {
 
 export function searchOpen(newTab) {
     var element = document.getElementById('searchItem' + curSearchItemActive);
-    var path = window.origin + '/mathwiki/' + element.getAttribute('href');
+    var path = window.origin + '/math-wiki/' + element.getAttribute('href');
 
     if (curSearchLength > 0) {
         searchClear();

@@ -9,7 +9,7 @@ export function initRefs() {
         citeEls = citeEls.filter((v,i,a)=>a.indexOf(v)==i);
         initRefHeader();
 
-        fetch('/mathwiki/references.json').then(response => response.json())
+        fetch('/math-wiki/references.json').then(response => response.json())
         .then((data) => {
             for (var i = 0; i < citeEls.length; i++) {
                 var cite = citeEls[i].replace(/\\cite{/, '').replace(/}/, '');
