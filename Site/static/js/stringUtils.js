@@ -51,11 +51,11 @@ export function toSmallCaps(s, small, big) {
 }
 
 export function getBasePath(path) {
-    return path.replace(/\//g, '').replace(/mathwiki/, '');
+    return path.replace(/\//g, '').replace(/math-wiki/, '');
 }
 
 export function getAbsUrl() {
-    return window.location.href.replace(/mathwiki.*/, 'mathwiki/');
+    return window.location.href.replace(/math-wiki.*/, 'math-wiki/');
 }
 
 export function removeExt(path) {
